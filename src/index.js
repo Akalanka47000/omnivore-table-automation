@@ -17,6 +17,7 @@ const items = require("./data/items");
         })).catch(err=> console.log(err.response.data));
         console.info(`Table ${table.number} is ready\n`);
     }));
+    console.info("All tables are ready. Exiting...");
     await new Promise((resolve) => setTimeout(resolve, 3000));
 })();
 
