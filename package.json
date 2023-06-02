@@ -1,0 +1,14 @@
+{
+  "name": "omnivore-table-automation",
+  "description": "Script to automate adding orders to an omnivore location",
+  "scripts": {
+    "refill": "node src/index.js"
+  },
+  "dependencies": {
+    "@sliit-foss/service-connector": "^1.2.2",
+    "axios": "1.4.0"
+  },
+  "devDependencies": {
+	"dotenv": "16.1.3"
+  }
+}
