@@ -4,7 +4,8 @@ const connector = serviceConnector({
     baseURL: `${process.env.OMNIVORE_BASE_URL}/locations/${process.env.OMNIVORE_LOCATION_ID}`,
     headerIntercepts: () => ({
         "Api-Key": process.env.OMNIVORE_API_KEY
-    })
+    }),
+    logs: process.env.NODE_ENV !== "production"
 });
 
 exports.fetchOrderByTable = async (table) => {

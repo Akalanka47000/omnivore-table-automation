@@ -15,5 +15,8 @@ const items = require("./data/items");
             delete item.name;
             return item;
         })).catch(err=> console.log(err.response.data));
+        console.info(`Table ${table.number} is ready\n`);
     }));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 })();
+

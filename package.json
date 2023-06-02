@@ -2,13 +2,17 @@
   "name": "omnivore-table-automation",
   "description": "Script to automate adding orders to an omnivore location",
   "scripts": {
+    "build": "node esbuild.config.js",
+    "postbuild": "pkg ./dist/index.js --targets node16-win-x64 --output out/refill-tables",
     "refill": "node src/index.js"
   },
   "dependencies": {
-    "@sliit-foss/service-connector": "^1.2.2",
+    "@sliit-foss/service-connector": "1.2.3",
     "axios": "1.4.0"
   },
   "devDependencies": {
-	"dotenv": "16.1.3"
+    "dotenv": "16.1.3",
+    "esbuild": "0.17.19",
+    "pkg": "5.8.1"
   }
 }
