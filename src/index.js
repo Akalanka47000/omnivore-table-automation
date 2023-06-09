@@ -10,7 +10,7 @@ const items = require("./data/items");
         if (order) {
             await makePayment(order.id, order.totals.due);
         }
-        await createOrder(table.id, table.items.map((item) => {
+        await createOrder(table.id, table.guest_count, table.items.map((item) => {
             item.menu_item = items.find((i) => i.name === item.name).id
             delete item.name;
             return item;

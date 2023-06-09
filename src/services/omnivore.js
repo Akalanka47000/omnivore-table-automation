@@ -21,12 +21,13 @@ exports.makePayment = (orderId, amount) => {
     });
 };
 
-exports.createOrder = (table, items) => {
+exports.createOrder = (table, guests, items) => {
     return connector.post("/tickets", {
         employee: process.env.EMPLOYEE_ID,
         revenue_center: process.env.RVC_ID,
         order_type: "1",
         table: table,
+        guest_count: guests,
         auto_send: true,
         items
     })
